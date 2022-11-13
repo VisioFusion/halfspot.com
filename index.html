@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Open Charts</title>
+<style>
+html, body {
+  text-align: center;
+  padding-top: 15px;
+  background: #202124;
+}
+
+p {
+  font-size: 40px;
+}
+
+img {
+  width: 80px;
+}
+
+img#logo {
+  width: 120px;
+  padding: 20px 15px;
+}
+
+.button1 {
+  background-color: #0c7ec3d4;
+  border: 2px solid #008CBA;
+  padding: 30px 280px 0px;
+  margin: 2px;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 50px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1:hover {
+  background-color: #008CBA;
+}
+
+.button2 {
+  background-color: #0f9d65de;
+  border: 2px solid #0f9d26de;
+  padding: 30px 258px 0px;
+  margin: 2px;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 50px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button2:hover {
+  background-color: #1dc281de;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+</style>
+  </head>
+<body>
+<div id="container">
+<img id="logo" src="./images/tradingview.png">
+<br>
+<button onclick="button1()", class="button1"><img src="./images/screen.svg"><p>Top</p></button>
+<br></br>
+<button onclick="button2()", class="button2"><img src="./images/screen.svg"><p>Bottom</p></button>
+<script>
+function button1() {
+window.open("https://www.tradingview.com/chart/0TSMeC9I/", "_blank", "toolbar=no, scrollbars=no, resizable=yes, top=0, left=0, width=637, height=1050");
+window.open("https://www.tradingview.com/chart/Ez28Njkm/", "_blank", "toolbar=no, scrollbars=no, resizable=yes, top=0, left=2411, width=637, height=1050");
+window.open("https://www.tradingview.com/chart/2jjlmIwi/", "_blank", "toolbar=no, scrollbars=no, resizable=yes, top=0, left=3050, width=637, height=1050");
+window.open("https://www.tradingview.com/chart/rXrAz9kZ/", "_blank", "toolbar=no, scrollbars=no, resizable=yes, top=0, left=3690, width=637, height=1050");
+}
+</script>
+<script>
+function button2() {
+window.open("https://www.tradingview.com/chart/Mc5fyEuj/", "_blank", "toolbar=no, scrollbars=no, resizable=yes, top=0, left=0, width=638, height=1050");
+window.open("https://www.tradingview.com/chart/njHGG2FK/", "_blank", "toolbar=no, scrollbars=no, resizable=yes, top=0, left=2411, width=638, height=1050");
+window.open("https://www.tradingview.com/chart/rWCPJouM/", "_blank", "toolbar=no, scrollbars=no, resizable=yes, top=0, left=3050, width=638, height=1050");
+window.open("https://www.tradingview.com/chart/zRuw8m1e/", "_blank", "toolbar=no, scrollbars=no, resizable=yes, top=0, left=3690, width=638, height=1050");
+}
+</script>
+</div>
+</body>
+</html>
