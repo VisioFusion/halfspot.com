@@ -1,0 +1,182 @@
+body,td { 
+	background-color: #e8e8e8;
+    margin-bottom: 6ex;
+    font-size: 1em;
+}
+
+a:hover { 
+	color: red;
+}
+
+/* blockquote{ */
+/* /\* This code is adapted from  */
+/*    http://www.dreamweavertutorial.co.uk/dreamweaver/articles/blockquote-style.htm */
+/*    The openQuote2.png image is also downloaded from that site *\/ */
+/*   margin:0; */
+/*   background-image:url(openQuote2.png); */
+/*   background-repeat:no-repeat; */
+/*   background-position:left top; */
+/*   padding:5px 0px 0px 50px;  */
+/* } */
+
+blockquote {
+  margin: 0 auto;
+  padding-left: 1em;
+  width: 90%;
+  border-left: 1px solid #606060;
+  background: #aaaa88;
+}
+
+.pagetitle  { 
+	text-align: center; 
+	font-size: 120%; 
+	font-weight: bold; 
+	border-bottom: thin solid white;
+	font-style: oblique;
+	color: #336699;
+}
+
+.centred  { 
+	text-align: center; 
+}
+
+.dateheader  { 
+	font-weight: bold; 
+	color: #336699; 
+}
+
+img.centred {
+	display: block;
+	margin-left: auto;
+	margin-right:auto;
+}
+
+h1 { 
+	font-size: 100%; 
+	font-weight: bold; 
+	color: #336699; 
+}
+
+h2 { 
+	font-size: 100%; 
+}
+
+h3 { 
+	font-size: 100%; 
+}
+
+th { 
+	font-size: 90%; 
+	font-style: italic;
+}
+
+.status-etc {
+    font-weight: bold;
+}
+
+#leftcol {
+	font-family: Sans-serif; 
+	/* font-size: 1em;  */
+	display: block;
+	float: left;
+	width: 13.5em;
+	position: absolute;
+	left: 0.25em;
+	padding: 2px 2px 2px 2px;
+	background-color: #6699cc;
+}
+
+#maincol {
+	display: block;
+	float: left;
+	padding: 2px 2px 2px 2px;
+	position: absolute;
+	left: 14.5em;
+}
+
+.small {
+	font-size: 75%;
+	font-style: italic;
+}
+#footer {
+	font-family: Sans-serif; 
+	/* font-size: 1em;  */
+	position: fixed;
+	bottom: 0;
+	width: 98%;
+	background-color: #dddddd;
+	z-index: 1;
+	border: medium dotted white;
+	margin: 2px 0 0 0;
+	left: 2px;
+	height: 6ex;
+}
+
+.clear {
+	display: block;
+	clear: both;
+}
+
+.leftfloat {
+	display: block;
+	float: left;
+}
+
+.rightfloat {
+	display: block;
+	float: right;
+}
+
+.hidden {
+	visibility: hidden;
+}
+
+#icons {
+	display: block;
+	float: left;
+	left: 0;
+	height: 100%;
+	width: 200px;
+	height: 44px;
+}
+
+#icons a {
+	display: block;
+	float: left;
+	margin: 5px 2px 5px 2px;
+}
+
+#menus {
+	display: block;
+	float: left;
+	position: absolute;
+	left: 200px;
+}
+
+#menus a {
+	display: block;
+	float: left;
+	padding: 2px 2px 2px 2px;
+	margin: 0px 2px 2px 2px;
+	text-align: center;
+}
+
+
+#main_menu a {
+	text-decoration: none;
+	border: thin solid;
+	background: yellow;
+}
+
+.filler3 {
+	height: 10em;
+}
+
+.filler2 {
+	height: 7em;
+}
+
+.filler1 {
+	height: 4em;
+}
+

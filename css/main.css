@@ -1,0 +1,166 @@
+body {
+    position: relative;
+	background: #dddddd;
+	color: black;
+	font-family: Sans-serif;
+	font-size: 1em;
+    margin-bottom: 10ex;
+}
+
+h1 {
+	text-align: center;
+	font-size: 150%;
+	color: blue
+}
+h2 {
+	font-size: 125%;
+	color: blue
+}
+h3 {
+	font-size: 100%;
+	color: blue
+}
+
+
+a:hover {
+	color: red;
+}
+
+.title {
+	color: blue;
+}
+    
+.centred {
+	text-align: center
+}
+div.centred table {
+	margin-left: auto;
+	margin-right:auto;
+	text-align: left;
+}
+img.centred {
+	display: block;
+	margin-left: auto;
+	margin-right:auto;
+}
+img.small {
+	max-height: 200px;
+}
+
+p.small, div.small {
+	font-size: 75%;
+	font-style: italic;
+}
+
+img.margined {
+	margin: 4px 40px 4px 4px;
+}
+
+.left {
+	text-align: left
+}
+
+.gray {
+	background: #808080;
+	color: black;
+}
+
+#footer {
+	position: fixed;
+	bottom: 0;
+    height: 10ex;
+    width: 100%;
+	background: #cccccc;
+	z-index: 1;
+	border: medium dotted white;
+	margin: 2px 0 0 0;
+	left: 2px;
+    overflow-y: scroll;
+}
+
+.clear {
+	display: block;
+	clear: both;
+}
+
+.leftfloat {
+	display: block;
+	float: left;
+}
+
+.rightfloat {
+	display: block;
+	float: right;
+}
+
+.hidden {
+	visibility: hidden;
+}
+
+#icons {
+	display: block;
+	float: left;
+	left: 0;
+}
+
+#icons a {
+	display: block;
+	float: left;
+	margin: 2px 2px 2px 2px;
+}
+
+#menus {
+	display: block;
+	position: absolute;
+
+}
+
+#menus a {
+	display: block;
+	float: left;
+	padding: 2px 2px 2px 2px;
+	margin: 2px 2px 2px 2px;
+	text-align: center;
+	font-family: verdana, arial, sans-serif;
+}
+
+
+#main_menu, #submenu, #local {
+	display: block;
+	clear: both;
+}
+
+
+#main_menu a {
+	text-decoration: none;
+	border: thin solid;
+	background: yellow;
+}
+
+#submenu a {
+	text-decoration: none;
+	border: thin dotted;
+	background: white;
+	overflow: hidden;
+}
+
+.filler3 {
+	height: 10em;
+}
+
+.filler2 {
+	height: 7em;
+}
+
+.filler1 {
+	height: 4em;
+}
+
+
+.num_reset {
+    counter-reset: item;      /* Create a counter scope */
+}
+.numbered:before {
+    content: counter(item) "."  "\0000A0 \0000A0 \0000A0 \0000A0";
+	 counter-increment: item;  /* Add 1 to item */
+}
