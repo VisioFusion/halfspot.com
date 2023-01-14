@@ -1,0 +1,1950 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.5 [en] (Win95; I) [Netscape]">
+   <title>Securities and Exchange Board of India - Acts, Rules &amp; Regulations</title>
+</head>
+<body text="#000000" bgcolor="#FFFFFF" link="#FF0000" vlink="#400090" alink="#FF0000">
+&nbsp;
+<table BORDER=0 WIDTH="100%" >
+<tr>
+<td><b><i>Appendix 1</i></b>
+<center><b><font size=+1>Value at Risk Models in the Indian Stock Market&nbsp;&nbsp;
+</font><i>J. R. Varma</i></b></center>
+
+<p><b><i><font size=+1>The Exponentially Weighted Moving Average Method</font></i></b>
+<ul>The successful use of value at risk models is critically dependent
+upon estimates of the volatility of underlying prices. The principal difficulty
+is that the volatility is not constant over time - if it were, it could
+be estimated with very high accuracy by using a sufficiently long sample
+of data. Thus models of time varying volatility become very important.
+Practitioners have often dealt with time varying parameters by confining
+attention to the recent past and ignoring observations from the distant
+past. Econometricians have on the other hand developed sophisticated models
+of time varying volatility like the GARCH (Generalised Auto-Regressive
+Conditional Heteroscedasticity) model.
+<p>Straddling the two are the exponentially weighted moving average (EWMA)
+methods popularised by J. P. Morgan’s RiskMetrics<font face="Symbol">&Ograve;</font>
+system. EWMA methods can be regarded as a variant of the practitioner’s
+idea of using only the recent past because the practitioners’ idea is essentially
+that of a simple moving average where the recent past gets a weight of
+one and data before that gets a weight of zero. The variation in EWMA is
+that the observations are given different weights with the most recent
+data getting the highest weight and the weights declining rapidly as one
+goes back. Effectively, therefore, EWMA is also based on the recent past,
+in fact, it is even more responsive than the simple moving average to sudden
+changes in volatility. EWMA can also be regarded as a special case of GARCH
+in which the "persistence parameter" is set to unity. This means that unlike
+GARCH, EWMA does not have a notion of long run volatility at all and is
+therefore more robust under regime shifts
+<p>EWMA is computationally very simple to implement (even simpler than
+a simple moving average). The volatility at the end of day t, <font face="Symbol">s</font><sub>t</sub>
+is estimated using the previous volatility estimate <font face="Symbol">s</font><sub>t-1</sub>
+(as at the end of day t-1),and the return r<sub>t</sub> observed in the
+index during day t:
+<br>(<font face="Symbol">s</font><sub>t</sub>)<sup>2</sup> = <font face="Symbol">l</font>
+(<font face="Symbol">s</font><sub>t-1</sub>)<sup>2</sup> + (1 - <font face="Symbol">l</font>
+) (r<sub>t</sub>)<sup>2</sup>
+<p>where <font face="Symbol">l</font> is a parameter which determines how
+rapidly volatility estimates change.
+<br>&nbsp;</ul>
+<b><font size=+1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Empirical Tests on
+the Indian Stock Market</font></b>
+<ul>&nbsp;
+<br>Whatever intuitive or theoretical merits a value at risk model may
+have, the ultimate test of its usability is how well it holds up against
+actual data. For example, tentative results indicate that foreign exchange
+markets in India are best modelled by processes that allow jumps and that
+EWMA methods do not perform well in that market at all. Empirical tests
+of the EWMA model in the Indian stock market are therefore of great importance.
+The EWMA model was therefore tested using historical data on the Indian
+stock market indices - the NSE-50 Index (Nifty) and the BSE-30 Index (Sensex).
+<p><b><i>&nbsp;Sample Period</i></b></ul>
+
+<ul>The data period used is from July 1, 1990 to June 30, 1998. The long
+sample period reflects the view that risk management studies must attempt
+(wherever possible) to cover at least two full business cycles (which would
+typically cover more than two interest rate cycles and two stock market
+cycles). It has been strongly argued on the other hand that studies must
+exclude the securities scam of 1992 and must preferably confine itself
+to the period after the introduction of screen based trading (post 1995).
+<ol>&nbsp;</ol>
+The view taken in this study is that the post 1995 period is essentially
+half a business cycle though it includes complete interest rate and stock
+market cycles. The post 1995 period is also an aberration in many ways
+as during this period there was a high positive autocorrelation in the
+index which violates weak form efficiency of the market. (High positive
+autocorrelation is suggestive of an administered market; for example, we
+see it in a managed exchange rate market). The autocorrelation in the stock
+market was actually low till about mid 1992 and peaked in 1995-96 when
+volatility reached very low levels. In mid-1998, the autocorrelation dropped
+as volatility rose sharply. In short there is distinct cause for worry
+that markets were artificially smoothed during the 1995-97 periods.
+<ol>&nbsp;</ol>
+Similarly, this study takes the view that the scam is a period of episodic
+volatility (event risk) which could quite easily recur. If we disregard
+issues of morality and legality, the scam was essentially a problem of
+monetary policy or credit policy. Since both the bull and bear sides of
+the market financed themselves through the scam in roughly equal measure,
+the scam was roughly neutral in terms of direct buy or sell pressure on
+the market. What caused a strong impact on stock prices was the vastly
+enhanced liquidity in the stock market. The scam was (in its impact on
+the stock market) essentially equivalent to monetary easing or credit expansion
+on a large scale. The exposure of the scam was similarly equivalent to
+dramatic monetary (or credit) tightening. Any sudden and sharp change in
+the stance of monetary policy can be expected to have an impact on the
+stock market very similar to the scam and its exposure. A prudent risk
+management system must be prepared to deal with events of this kind.
+<ol>&nbsp;</ol>
+</ul>
+<b><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Logarithmic Return</i></b>
+<ul>The usual definition of return as the percentage change in price has
+a very serious problem in that it is not symmetric. For example, if the
+index rises from 1000 to 2000, the percentage return would be 100%, but
+if it falls back from 2000 to 1000, the percentage return is not -100%
+but only -50%. As a result, the percentage return on the negative side
+cannot be below -100%, while on the positive side, there is no limit on
+the return. The statistical implication of this is that returns are skewed
+in the positive direction and the use of the normal distribution becomes
+inappropriate.
+<ol>&nbsp;</ol>
+For statistical purposes, therefore, it is convenient to define the return
+in logarithmic terms as r<sub>t</sub> = ln(I<sub>t</sub>/I<sub>t-1</sub>)
+where I<sub>t</sub> is the index at time t. The logarithmic return can
+also be rewritten as r<sub>t</sub> = ln(1+R<sub>t</sub>) where R<sub>t</sub>
+is the percentage return showing that it is essentially a logarithmic transformation
+of the usual return. In the reverse direction, the percentage return can
+be recovered from the logarithmic return by the formula, R<sub>t</sub>
+= exp(r<sub>t</sub>)-1. Thus after the entire analysis is done in terms
+of logarithmic return, the results can be restated in terms of percentage
+returns.
+<ol>&nbsp;</ol>
+It is worth pointing out that the percentage return and the logarithmic
+return are very close to each other when the return is small in magnitude.
+However, when there is a large return (positive or negative) the logarithmic
+return can be substantially different from the percentage return. For example,
+in the earlier illustration of the index rising from 1000 to 2000 and then
+dropping back to 1000, the logarithmic returns would be +69.3% and -69.3%
+respectively as compared to the percentage returns of +100% and -50% respectively.</ul>
+<b><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Maximum Likelihood
+Estimation</i></b>
+<ul>The EWMA method requires the specification of the value of <font face="Symbol">l</font>
+. One can estimate <font face="Symbol">l</font> itself statistically by
+the method of maximum likelihood. This process yielded an estimate for
+<font face="Symbol">l</font>
+of 0.923 for the Nifty and 0.929 for the Sensex. These values are not statistically
+significantly different from the value of 0.94 for <font face="Symbol">l</font>
+used in J. P. Morgan’s RiskMetrics<font face="Symbol">&Ograve;</font> system
+for daily horizons. (The likelihood ratio test gives chi-squares with 1
+df of 1.89 for the Sensex and 4.46 for the Nifty which are not significant
+at the 1% level even though we have a sample size of over 1750). The analysis
+was therefore carried out using a <font face="Symbol">l</font> of 0.94
+to permit easier comparability and facilitate further extensions to the
+model.</ul>
+<b><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Conditional
+Normality</i></b>
+<ul>It is well known that stock market returns are not normally distributed
+even if one uses logarithmic returns to induce symmetry. However, the time
+varying volatility itself is one major cause for non-normality. It is to
+be expected therefore that the "conditional distribution" of the return
+given the volatility estimate is approximately normal. In other words,
+the return on each day divided by the estimated standard deviation for
+that day should be roughly normally distributed. The results do indicate
+significant reduction in non normality. The unconditional distribution
+has an excess kurtosis of 5.42 for Nifty and 4.77 for Sensex while the
+"conditional distribution" has an excess kurtosis of only 1.75 for Nifty
+and 1.13 for Sensex. Thus over two-thirds of the excess kurtosis is eliminated
+by the time varying volatility estimation process.
+<ol>&nbsp;</ol>
+Nevertheless, the kurtosis (which is a measures the fat tails) is still
+too large for use of the normal distribution values without modification.
+For example, the normal distribution would imply applying a value of 2.58
+<font face="Symbol">s</font>
+for a two sided "value at risk" limit of 1%. However, the presence of fat
+tails even in the conditional stock market returns implies that it is necessary
+to use a higher value to get the same degree of protection. A common rule
+of thumb for distributions with a moderate degree of kurtosis is to use
+a value of 3 <font face="Symbol">s</font> for a 1% tail and this value
+is used in the rest of this study.</ul>
+<b><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Margins</i></b>
+<ul>Since the volatility estimates are for the logarithmic return, the
+<font face="Symbol">&plusmn;</font>
+3 <font face="Symbol">s</font> limits for a 99% VAR would specify the maximum/minimum
+limits on the logarithmic returns not the percentage returns. To convert
+these into percentage margins, the logarithmic returns would have to be
+converted into percentage price changes by reversing the logarithmic transformation.
+Therefore the percentage margin on short positions would be equal to 100(exp(3<font face="Symbol">s</font><sub>t</sub>)-1)
+and the percentage margin on long positions would be equal to 100(1-exp(-3<font face="Symbol">s</font><sub>t</sub>)).
+This implies slightly larger margins on short positions than on long positions,
+but the difference is not significant except during periods of high volatility
+where the difference merely reflects the fact that the downside is limited
+(prices can at most fall to zero) while the upside is unlimited.</ul>
+<b><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Back Testing
+Results</i></b>
+<ul>Backtesting this model for the period over a 8 year period showed that
+the 1% VAR limit was crossed 22 times in the case of Nifty and 23 times
+in the case of Sensex as against the expected number of 18 violations.
+The hypothesis that the true probability of a violation is 1% cannot be
+rejected at even the 5% level of statistical significance though we have
+a sample size of over 1750. The actual number of violations is therefore
+well within the allowable limits of sampling error. In the terminology
+of the Bank for International Settlements ("Supervisory framework for the
+use of ‘backtesting’ in conjunction with the internal models approach to
+marker risk capital requirements", Basle Committee on Banking Supervision,
+January 1996), these numbers are well within the "Green Zone" where the
+"test results are consistent with an accurate model, and the probability
+of accepting an inaccurate model is low".
+<p>The market movements, margins and margin shortfalls are shown graphically
+in Figures 1 and 2. The summary statistics about the actual margins on
+the sell side are tabulated below while year by year details of the sell
+side and buy side margins are given in Tables 1 and 2.</ul>
+
+<ul>
+<ol>&nbsp;
+<center><table BORDER CELLPADDING=2 WIDTH="415" >
+<tr>
+<td VALIGN=TOP WIDTH="37%" HEIGHT="16"><b><i>Sell Side Margins</i></b></td>
+
+<td VALIGN=TOP WIDTH="32%" HEIGHT="16"><b><i>Nifty</i></b></td>
+
+<td VALIGN=TOP WIDTH="32%" HEIGHT="16"><b><i>Sensex</i></b></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="37%" HEIGHT="16"><b>Average</b></td>
+
+<td VALIGN=TOP WIDTH="32%" HEIGHT="16">5.49%</td>
+
+<td VALIGN=TOP WIDTH="32%" HEIGHT="16">5.74%</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="37%" HEIGHT="16"><b>Maximum</b></td>
+
+<td VALIGN=TOP WIDTH="32%" HEIGHT="16">21.73%</td>
+
+<td VALIGN=TOP WIDTH="32%" HEIGHT="16">21.31%</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="37%" HEIGHT="16"><b>Minimum</b></td>
+
+<td VALIGN=TOP WIDTH="32%" HEIGHT="16">2.04%</td>
+
+<td VALIGN=TOP WIDTH="32%" HEIGHT="16">2.21%</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP COLSPAN="3" HEIGHT="16"><b>Frequency Distribution</b></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="37%" HEIGHT="16"><b>Below 5%</b></td>
+
+<td VALIGN=TOP WIDTH="32%" HEIGHT="16">52.51%</td>
+
+<td VALIGN=TOP WIDTH="32%" HEIGHT="16">50.45%</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="37%" HEIGHT="16"><b>5 to 10%</b></td>
+
+<td VALIGN=TOP WIDTH="32%" HEIGHT="16">41.75%</td>
+
+<td VALIGN=TOP WIDTH="32%" HEIGHT="16">41.99%</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="37%" HEIGHT="16"><b>10 to 15%</b></td>
+
+<td VALIGN=TOP WIDTH="32%" HEIGHT="16">4.17%</td>
+
+<td VALIGN=TOP WIDTH="32%" HEIGHT="16">6.08%</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="37%" HEIGHT="16"><b>15 to 20%</b></td>
+
+<td VALIGN=TOP WIDTH="32%" HEIGHT="16">1.35%</td>
+
+<td VALIGN=TOP WIDTH="32%" HEIGHT="16">1.31%</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="37%" HEIGHT="16"><b>Above 20%</b></td>
+
+<td VALIGN=TOP WIDTH="32%" HEIGHT="16">0.23%</td>
+
+<td VALIGN=TOP WIDTH="32%" HEIGHT="16">0.17%</td>
+</tr>
+</table></center>
+</ol>
+</ul>
+<b><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A Closer Look
+at VAR Violations</i></b>
+<ul>Taking a closer look at the actual violations (See Figures 3 and 4),
+it is seen that most of the violations take place when the market move
+is large and the violation is typically a small fraction of the market
+move. This implies that in most cases, the model is able to correctly forecast
+that the markets are in a volatile period and step up the margins accordingly
+to protect market integrity.
+<p>There are only two exceptions to this pattern. The first exception is
+March 31, 1997 when the sudden withdrawal of support to the then government
+by the major supporting party led to a sharp fall in the market. This is
+the kind of event risk which a statistical model cannot predict and against
+which the only protection can be a second line of defence (broker net worth).
+The second exception is October 28, 1997 when the global equity meltdown
+triggered by sharp falls in the Asian markets and in the US market drove
+the Indian market also down.
+<p>It is conceivable, though by no means certain, that more sophisticated
+statistical models which can estimate volatility contagion across several
+financial markets could have provided better protection against the market
+drop of October 28, 1997. The development of multivariate models of volatility
+estimation that can account for such contagion is a topic for further research.
+Practical utility of such a model would however be contingent on the ability
+of the derivatives exchange / clearing corporation to make a margin call
+shortly before the market opens in Mumbai based on the market movement
+in New York (previous day close), Tokyo (same day close) and Hong Kong
+(same day morning session).
+<br>&nbsp;
+<table BORDER CELLPADDING=2 WIDTH="742" >
+<tr>
+<td VALIGN=TOP COLSPAN="11" HEIGHT="16"><b>Table 1: Summary Statistics
+of Margins on Nifty</b></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="14%" HEIGHT="16"></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center><b><i>1990</i></b></center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center><b><i>1991</i></b></center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center><b><i>1992</i></b></center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center><b><i>1993</i></b></center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center><b><i>1994</i></b></center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center><b><i>1995</i></b></center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center><b><i>1996</i></b></center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center><b><i>1997</i></b></center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center><b><i>1998</i></b></center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center><b><i>1990-98</i></b></center>
+</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP COLSPAN="11" HEIGHT="16">
+<center><b>Nifty: Margin on Long Side</b></center>
+</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="14%" HEIGHT="16"><b>Average</b></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>7.97%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>5.33%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>8.63%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>5.13%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>3.97%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>3.55%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>4.24%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>5.03%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>4.89%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>5.15%</center>
+</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="14%" HEIGHT="16"><b>Maximum</b></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>11.48%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>8.86%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>17.85%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>7.02%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>7.34%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>5.49%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>7.05%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>8.22%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>8.43%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>17.85%</center>
+</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="14%" HEIGHT="16"><b>Minimum</b></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>4.99%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>3.48%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>3.48%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>3.34%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>2.12%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>2.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>2.74%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>2.97%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>3.68%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>2.00%</center>
+</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP COLSPAN="3" WIDTH="31%" HEIGHT="16"><b>Frequency Distribution</b></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16"></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16"></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16"></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16"></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16"></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16"></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16"></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16"></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="14%" HEIGHT="16"><b>Below 5%</b></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>2.30%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>50.49%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>13.68%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>44.60%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>73.48%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>96.19%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>85.08%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>50.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>74.38%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>58.93%</center>
+</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="14%" HEIGHT="16"><b>5 to 10%</b></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>79.31%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>49.51%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>52.11%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>55.40%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>26.52%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>3.81%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>14.92%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>50.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>25.62%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>36.51%</center>
+</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="14%" HEIGHT="16"><b>10 to 15%</b></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>18.39%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>27.89%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>3.89%</center>
+</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="14%" HEIGHT="16"><b>15 to 20%</b></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>6.32%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.68%</center>
+</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="14%" HEIGHT="16"><b>Above 20%</b></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP COLSPAN="11" HEIGHT="16">
+<center><b>Nifty: Margin on Short Side</b></center>
+</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="14%" HEIGHT="16"><b>Average</b></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>8.71%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>5.65%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>9.62%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>5.42%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>4.16%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>3.69%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>4.44%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>5.31%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>5.15%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>5.49%</center>
+</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="14%" HEIGHT="16"><b>Maximum</b></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>12.97%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>9.72%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>21.73%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>7.55%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>7.93%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>5.81%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>7.59%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>8.96%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>9.20%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>21.73%</center>
+</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="14%" HEIGHT="16"><b>Minimum</b></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>5.26%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>3.61%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>3.60%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>3.46%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>2.16%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>2.04%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>2.81%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>3.06%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>3.82%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>2.04%</center>
+</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP COLSPAN="3" WIDTH="31%" HEIGHT="16"><b>Frequency Distribution</b></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16"></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16"></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16"></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16"></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16"></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16"></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16"></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16"></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="14%" HEIGHT="16"><b>Below 5%</b></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>41.75%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>12.11%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>31.92%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>72.61%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>91.95%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>75.40%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>44.26%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>62.81%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>52.51%</center>
+</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="14%" HEIGHT="16"><b>5 to 10%</b></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>67.82%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>58.25%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>48.95%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>68.08%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>27.39%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>8.05%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>24.60%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>55.74%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>37.19%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>41.75%</center>
+</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="14%" HEIGHT="16"><b>10 to 15%</b></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>32.18%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>24.21%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>4.17%</center>
+</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="14%" HEIGHT="16"><b>15 to 20%</b></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>12.63%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>1.35%</center>
+</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="14%" HEIGHT="16"><b>Above 20%</b></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>2.11%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.23%</center>
+</td>
+</tr>
+</table>
+
+<br>&nbsp;
+<table BORDER CELLPADDING=2 WIDTH="740" >
+<tr>
+<td VALIGN=TOP COLSPAN="11" HEIGHT="16"><b>Table 2: Summary Statistics
+of Margins on Sensex&nbsp;</b></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="12%" HEIGHT="16"></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center><b><i>1990</i></b></center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center><b><i>1991</i></b></center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center><b><i>1992</i></b></center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center><b><i>1993</i></b></center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center><b><i>1994</i></b></center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center><b><i>1995</i></b></center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center><b><i>1996</i></b></center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center><b><i>1997</i></b></center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center><b><i>1998</i></b></center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center><b><i>1990-98</i></b></center>
+</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP COLSPAN="11" HEIGHT="16">
+<center><b>Sensex: Margin on Long Side</b></center>
+</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="12%" HEIGHT="16"><b>Average</b></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>9.08%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>6.11%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>8.74%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>5.47%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>4.12%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>3.61%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>4.33%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>4.70%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>5.12%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>5.37%</center>
+</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="12%" HEIGHT="16"><b>Maximum</b></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>13.08%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>10.23%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>17.57%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>7.45%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>7.39%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>5.11%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>6.50%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>7.93%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>8.66%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>17.57%</center>
+</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="12%" HEIGHT="16"><b>Minimum</b></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>5.35%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>3.72%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>3.67%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>3.48%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>2.35%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>2.16%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>2.95%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>2.73%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>3.85%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>2.16%</center>
+</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP COLSPAN="3" WIDTH="29%" HEIGHT="16"><b>Frequency Distribution</b></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16"></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16"></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16"></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16"></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16"></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16"></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16"></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16"></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="12%" HEIGHT="16"><b>Below 5%</b></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>26.21%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>11.05%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>29.44%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>73.48%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>98.71%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>86.08%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>64.49%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>63.03%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>55.28%</center>
+</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="12%" HEIGHT="16"><b>5 to 10%</b></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>63.22%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>71.84%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>55.26%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>70.56%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>26.52%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>1.29%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>13.92%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>35.51%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>36.97%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>39.03%</center>
+</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="12%" HEIGHT="16"><b>10 to 15%</b></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>36.78%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>1.94%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>26.32%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>4.89%</center>
+</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="12%" HEIGHT="16"><b>15 to 20%</b></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>7.37%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.80%</center>
+</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="12%" HEIGHT="16"><b>Above 20%</b></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP COLSPAN="11" HEIGHT="16">
+<center><b>Sensex: Margin on Short Side</b></center>
+</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="12%" HEIGHT="16"><b>Average</b></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>10.05%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>6.54%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>9.74%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>5.80%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>4.33%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>3.75%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>4.53%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>4.95%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>5.41%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>5.74%</center>
+</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="12%" HEIGHT="16"><b>Maximum</b></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>15.05%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>11.39%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>21.31%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>8.05%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>7.98%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>5.39%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>6.95%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>8.61%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>9.48%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>21.31%</center>
+</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="12%" HEIGHT="16"><b>Minimum</b></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>5.65%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>3.86%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>3.81%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>3.61%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>2.40%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>2.21%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>3.04%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>2.81%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>4.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>2.21%</center>
+</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP COLSPAN="3" WIDTH="29%" HEIGHT="16"><b>Frequency Distribution</b></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16"></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16"></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16"></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16"></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16"></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16"></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16"></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16"></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="12%" HEIGHT="16"><b>Below 5%</b></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>19.42%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>8.42%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>24.77%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>72.61%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>95.26%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>81.86%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>58.37%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>45.38%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>50.45%</center>
+</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="12%" HEIGHT="16"><b>5 to 10%</b></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>51.72%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>71.36%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>53.68%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>75.23%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>27.39%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>4.74%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>18.14%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>41.63%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>54.62%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>41.99%</center>
+</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="12%" HEIGHT="16"><b>10 to 15%</b></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>47.13%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>9.22%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>24.74%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>6.08%</center>
+</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="12%" HEIGHT="16"><b>15 to 20%</b></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>1.15%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>11.58%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>1.31%</center>
+</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="12%" HEIGHT="16"><b>Above 20%</b></td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>1.58%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.00%</center>
+</td>
+
+<td VALIGN=TOP WIDTH="9%" HEIGHT="16">
+<center>0.17%</center>
+</td>
+</tr>
+</table>
+
+<p><img SRC="image1.gif" height=472 width=921>
+<p><b>Figure 1</b>
+<p><img SRC="image2.gif" height=494 width=928>
+<p><b>Figure 2</b>
+<br>&nbsp;
+<br>&nbsp;
+<p><img SRC="image3.gif" height=494 width=928>
+<p><b>Figure 3</b>
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<div align=right><img SRC="image4.gif" height=494 width=928></div>
+<b>Figure 4</b></ul>
+
+<center><font size=-1><a href="javascript:history.back()">[BACK]</a>&nbsp;</font></center>
+</td>
+</tr>
+
+<tr>
+<td></td>
+</tr>
+</table>
+
+</body>
+</html>
